@@ -1,46 +1,38 @@
-Project Overview:
+Project Overview
+This repository contains a serverless intelligence system that automates the feedback lifecycle. The project captures patient interactions, performs AI-driven analysis, and escalates critical issues to leadership without manual intervention.
 
-This repository contains an autonomous feedback intelligence system designed for healthcare environments. The project creates an end-to-end automated pipeline that captures patient feedback and converts it into high-priority alerts and executive reports. By moving away from manual data entry, the system ensures that urgent patient concerns are identified and escalated in real time.
---------------------------------------------------
-Core Features:
+Core Features
+Conversational Intake: Captures unstructured feedback via natural language interfaces.
 
-Conversational Data Capture: Uses a natural language interface to gather unstructured feedback from users.
+Autonomous Reporting: Removes manual data processing using scheduled event triggers.
 
-Automated Orchestration: Employs a serverless heartbeat to manage daily reporting cycles without human intervention.
+Sentiment Intelligence: Categorizes feedback by severity to highlight urgent concerns.
 
-Intelligent Sentiment Analysis: Processes raw text to isolate critical issues and categorize them by severity.
+Direct Escalation: Delivers high-priority alerts and executive summaries to inboxes.
 
-Proactive Notification: Delivers formatted summaries and urgent notifications directly to management inboxes.
+Architecture Flow
+Intake: Amazon Lex collects user feedback through voice or text.
 
-Trend Visibility: Provides structured summaries of operational performance and service trends.
---------------------------------------------------
-Architecture Flow:
+Persistence: Data is stored in Amazon DynamoDB and S3 for processing.
 
-Input: Amazon Lex captures the patient's voice or text feedback.
+Orchestration: Amazon EventBridge triggers the analysis engine on a schedule.
 
-Storage: Raw interactions are stored in Amazon DynamoDB and Amazon S3 for record-keeping.
+Intelligence: AWS Lambda and Amazon Bedrock analyze and summarize the feedback.
 
-Trigger: Amazon EventBridge initiates a scheduled daily review of all stored feedback.
+Delivery: Amazon SNS broadcasts the final reports and urgent notifications.
 
-Analysis: AWS Lambda orchestrates Amazon Bedrock (Claude 3.5) to analyze sentiments and summarize the day's data.
-
-Output: Amazon SNS pushes the final report and any high-priority alerts to the designated stakeholders.
---------------------------------------------------
-Technical Stack:
-
-Conversational Interface: Amazon Lex
+Technical Stack
+AI and ML: Amazon Lex, Amazon Bedrock
 
 Compute: AWS Lambda
 
-Orchestration: Amazon EventBridge
-
-AI Integration: Amazon Bedrock (Claude 3.5)
-
-Messaging: Amazon SNS
+Events: Amazon EventBridge
 
 Storage: Amazon DynamoDB, Amazon S3
 
-Analytics: Amazon Athena
---------------------------------------------------
+Notifications: Amazon SNS
+
+Analysis: Amazon Athena
+
 Deployment
-This project is built using a serverless architecture, ensuring high scalability and low operational cost. Deployment requires the configuration of the Lex Bot for data ingestion and the setup of EventBridge rules to trigger the analysis Lambda functions.
+This project is built on a serverless stack for scalability and cost-efficiency. Setup requires configuring the Lex bot for data ingestion and defining the EventBridge rules for the automated reporting cycle.
