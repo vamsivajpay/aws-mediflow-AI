@@ -1,7 +1,9 @@
-Project Overview
+Project Overview:
+
 This repository contains an autonomous feedback intelligence system designed for healthcare environments. The project creates an end-to-end automated pipeline that captures patient feedback and converts it into high-priority alerts and executive reports. By moving away from manual data entry, the system ensures that urgent patient concerns are identified and escalated in real time.
 --------------------------------------------------
-Core Features
+Core Features:
+
 Conversational Data Capture: Uses a natural language interface to gather unstructured feedback from users.
 
 Automated Orchestration: Employs a serverless heartbeat to manage daily reporting cycles without human intervention.
@@ -12,7 +14,8 @@ Proactive Notification: Delivers formatted summaries and urgent notifications di
 
 Trend Visibility: Provides structured summaries of operational performance and service trends.
 --------------------------------------------------
-Architecture Flow
+Architecture Flow:
+
 Input: Amazon Lex captures the patient's voice or text feedback.
 
 Storage: Raw interactions are stored in Amazon DynamoDB and Amazon S3 for record-keeping.
@@ -23,7 +26,8 @@ Analysis: AWS Lambda orchestrates Amazon Bedrock (Claude 3.5) to analyze sentime
 
 Output: Amazon SNS pushes the final report and any high-priority alerts to the designated stakeholders.
 --------------------------------------------------
-Technical Stack
+Technical Stack:
+
 Conversational Interface: Amazon Lex
 
 Compute: AWS Lambda
